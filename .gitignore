@@ -2,6 +2,7 @@
 .*.swp
 .*.swo
 .*.swn
+.*.swm
 
 # project
 node_modules

@@ -6,6 +6,8 @@ import { SERVER_BASE } from '../actions';
 import './DashboardPage.scss';
 import icarosTest from '../../static/images/icaros.png';
 
+import InvestCard from '../components/InvestCard';
+
 class DashboardPage extends Component {
   constructor(props) {
     super(props);
@@ -25,17 +27,14 @@ class DashboardPage extends Component {
           <div className="center-align caption">Deal of the Day</div>
           <div className="row">
             <div className="col s10 offset-s1">
-              <div className="dealOfDay">
-                <div className="coverImg"
-                    style={{backgroundImage: 'url('+icarosTest+')'}}></div>
-                <div className="titleWrapper valign-wrapper">
-                  <div className="title valign">ICAROS</div>
-                </div>
-                <a className="btn">
-                    <i className="tinvest"></i>
-                    Tinvest now
-                </a>
-              </div>
+              <InvestCard 
+                  image={icarosTest}
+                  title='ICAROS'
+                  link={{
+                    to: '/home/invest/3',
+                    text: (<span><i className="tinvest"></i>Tinvest now</span>)
+                  }}
+              />
             </div>
           </div>
         </section>

@@ -5,6 +5,10 @@ import { SERVER_BASE } from '../actions';
 
 import './DashboardPage.scss';
 
+import icarosTest from '../../static/images/icaros.png';
+
+import InvestCard from '../components/InvestCard';
+
 class DashboardPage extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +24,15 @@ class DashboardPage extends Component {
   render() {
     return (
       <div className="dashboardPage">
-     </div>
+        <div className="row">
+          <div className="col s10 offset-s1">
+            <InvestCard
+                image={icarosTest}
+                title='ICAROS'
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }

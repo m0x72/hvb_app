@@ -21,6 +21,7 @@ class InvestPage extends Component {
     return (
       <div className="investPage">
         InvestPage
+        { this.props.children }
       </div>
     );
   }
