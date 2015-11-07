@@ -45,7 +45,7 @@ class DashboardPage extends Component {
           </div>
         </div>
         <div className="buttonBar">
-          <a className="btn contact">Contact Consultant</a>
+          <a className="btn btn-secondary contact">Contact Consultant</a>
           <a className="btn invest">
             <i className="tinvest"></i>
             Tinvest now

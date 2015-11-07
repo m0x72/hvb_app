@@ -91,6 +91,7 @@ html {
 
 // Buttons
 $btn-primary: #eb4d5f;
+$btn-secondary: #00aed0;
 
 .btn {
   color: white;
@@ -121,6 +122,9 @@ $btn-primary: #eb4d5f;
 .btn-transparent {
   color: $btn-primary;
   background-color: transparent;
+}
+.btn-secondary {
+  background-color: $btn-secondary;
 }
 
 i.tinvest {

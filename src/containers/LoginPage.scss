@@ -1,5 +1,16 @@
 .login {
   &.valign-wrapper {
     height: 100%;
+    .valign { 
+      width: 100%;
+    }
   }
+
+  .register {
+    > * {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+  
 }

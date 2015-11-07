@@ -5,6 +5,8 @@ import { pushState } from 'redux-router';
 
 import { fetchLogin } from '../actions';
 import FormError from '../components/form/FormError';
+import { Form } from 'formsy-react';
+import Input from '../components/form/Input';
 
 import './LoginPage.scss';
 
@@ -17,10 +19,9 @@ class LoginPage extends Component {
     };
   }
 
-  login(e) {
-    e.preventDefault();
-    const email = this.refs.email.value.trim();
-    const pw = this.refs.password.value;
+  login(model, resetForm, invalidateForm) {
+    const email = model.email.trim();
+    const pw = model.password;
     this.props.fetchLogin(email, pw)
       .then(() => {
         if (this.props.auth.loginError) {
@@ -41,39 +42,33 @@ class LoginPage extends Component {
     if (this.props.auth.isFetching) loadingStyle.display = 'block';
     return (
       <div className="login valign-wrapper">
-        <div className="row valign">
-          <div className="col s12">
+        <div className="valign">
+          <div className="">
             <h3 className="center-align">tinvest</h3>
           </div>
-          <form className="col s8 offset-s2" 
-                onSubmit={this.login}>
-            <div className="row">
-              <div className="input-field col s12">
-                <input id="email" type="email" ref="email"
-                  className="validate" placeholder="" />
-                <label htmlFor="email" className="active">
-                  Email
-                </label>
-              </div>
-              <div className="input-field col s12">
-                <input id="password" type="password" ref="password"
-                  className="validate" placeholder="" />
-                <label htmlFor="password" className="active">
-                  Password
-                </label>
-              </div>
-              <div className="col s12 right-align">
+          <Form className="" 
+                onValidSubmit={this.login}>
+            <div className="inputItem">
+              <Input className=""
+                name="email" type="email" 
+                label="Email" />
+            </div>
+            <div className="inputItem">
+              <Input className=""
+                name="password" type="password" 
+                label="Password" />
+            </div>
+              <div className="">
                 <button type="submit"
-                  className="btn waves-effect waves-light">
+                  className="btn">
                   Sign In
                 </button>
               </div>
-              <div className="col s12 right-align">
+              <div className="right-align">
                 <FormError error={this.state.loginError} />
               </div>
-            </div>
-          </form>
-          <div className="col s8 offset-s2">
+          </Form>
+          <div className="register center-align">
             <h6>Don't have an account?</h6>
             <Link to="/register">Sign up</Link>
           </div>
