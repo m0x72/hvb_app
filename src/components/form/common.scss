@@ -2,7 +2,55 @@
 @import "~materialize-css/sass/components/mixins";
 @import "~materialize-css/sass/components/color";
 @import "~materialize-css/sass/components/variables";
-@import "~materialize-css/sass/components/form";
+//@import "~materialize-css/sass/components/form";
+
+$background-header-color: #f8f8f9;
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search] {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  //height: 3rem;
+  width: 100%;
+  font-size: 1.2rem;
+  box-shadow: none;
+  box-sizing: content-box;
+
+}
+
+label.input {
+  opacity: 0.5;
+}
+
+.inputItem {
+  padding: 10px 20px;
+  border-bottom: 2px solid $background-header-color;
+}
+
+.subHeader {
+  padding: 15px 20px;
+  background-color: $background-header-color;
+}
+
+.profileImageWrapper {
+  margin: 20px 0;
+  img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+}
 
 .error-field {
   color: $input-error-color;

@@ -41,8 +41,8 @@ export default class Root extends Component {
               <IndexRoute component={LoginPage} />
               <Route path="register" component={RegisterPage} />
               <Route path="home" component={HomePage}
-                      onEnter={this.requireAuth}>
-               
+              >
+               { /*onEnter={this.requireAuth} */ }
                 <Route path="settings" component={SettingsPage} />
                 <Route path="dashboard" component={DashboardPage} />
                 <Route path="invest" component={InvestPage}>

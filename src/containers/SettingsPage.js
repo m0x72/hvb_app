@@ -5,6 +5,11 @@ import { SERVER_BASE } from '../actions';
 
 import './SettingsPage.scss';
 
+import testProfileImg from '../../static/images/profile_1.jpg';
+
+import { Form } from 'formsy-react';
+import Input from '../components/form/Input';
+
 class SettingsPage extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +25,43 @@ class SettingsPage extends Component {
   render() {
     return (
       <div className="settingsPage">
-        SettingsPage
+        <Form>
+          <div className="profileImageWrapper">
+            <img src={testProfileImg} />
+          </div>
+          <div className="subHeader">GENERAL</div>
+          <div className="inputItem">
+            <Input name="name" type="text" label="Name"
+              placeholder="Your name"/>
+          </div>
+          <div className="inputItem">
+            <Input name="email" type="text" label="Email"/>
+          </div>
+          <div className="inputItem">
+            <Input name="password" type="password" label="Password"/>
+          </div>
+          <div className="inputItem">
+            <Input name="birthday" type="text" label="Birthday"/>
+          </div>
+          <div className="inputItem">
+            <Input name="max_tinvest" type="text" label="Max.Tinvestment"/>
+          </div>
+          <div className="subHeader">FILTER</div>
+          <div className="inputItem">
+            <Input name="max_tinvest" type="text" label="Filter Tinvesments by Location"/>
+          </div>
+          <div className="inputItem">
+            <Input name="max_tinvest" type="text" label="Filter Tinvestments by Community"/>
+          </div>
+          <div className="inputItem">
+            <Input name="max_tinvest" type="text" label="Filter by Interest"/>
+          </div>
+          <div className="buttonBar">
+            <button className="btn">
+              <i className="material-icons">check</i>
+            </button>
+          </div>
+        </Form>
       </div>
     );
   }

@@ -16,17 +16,17 @@ class Input extends Component {
     const errorMsg = this.props.showRequired() ? 'Erforderlich' : this.props.getErrorMessage();
     return (
       <div className={this.props.className + ' input-field'}>
+        <label htmlFor={this.props.name} className="input"
+            data-error={errorMsg}
+            data-success="" >
+          {this.props.label}
+        </label>
         <input id={this.props.name} type={this.props.type}
             name={this.props.name}
             className={inputClassName}
             placeholder={this.props.placeholder}
             value={this.props.getValue()}
             onChange={ e => this.props.setValue(e.target.value) } />
-        <label htmlFor={this.props.name} className="active"
-            data-error={errorMsg}
-            data-success="" >
-          {this.props.label}
-        </label>
       </div>
     );
   }

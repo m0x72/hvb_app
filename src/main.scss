@@ -51,14 +51,14 @@ $link-color: color("light-blue", "darken-1") !default;
 @import "~materialize-css/sass/components/cards";
 @import "~materialize-css/sass/components/tabs";
 //@import "~materialize-css/sass/components/tooltip";
-@import "~materialize-css/sass/components/buttons";
+//@import "~materialize-css/sass/components/buttons";
 //@import "~materialize-css/sass/components/dropdown";
 //@import "~materialize-css/sass/components/waves";
 //@import "~materialize-css/sass/components/modal";
 //@import "~materialize-css/sass/components/collapsible";
 //@import "~materialize-css/sass/components/chips";
 //@import "~materialize-css/sass/components/materialbox";
-@import "~materialize-css/sass/components/form";
+//@import "~materialize-css/sass/components/form";
 //@import "~materialize-css/sass/components/table_of_contents";
 @import "~materialize-css/sass/components/sideNav";
 @import "~materialize-css/sass/components/preloader";
@@ -79,11 +79,81 @@ $link-color: color("light-blue", "darken-1") !default;
  * Materialize-css stlying
  */
 
+/*
+ * Own general styling
+ */
+$font-color: #1d1d26;
 
+html {
+  color: $font-color;
+  font-family: OpenSans, sans-serif;
+}
+
+// Buttons
+$btn-primary: #eb4d5f;
+
+.btn {
+  color: white;
+  background-color: $btn-primary;
+  height: 60px;
+  line-height: 58px;
+  width: 100%;
+  text-align: center;
+  vertical-align: center;
+  display: inline-block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  
+  i {
+    font-size: 3rem;
+    margin: 0 10px;
+  }
+
+}
+.btn-round {
+  border-radius: 20px;
+}
+
+.btn-transparent {
+  color: $btn-primary;
+  background-color: transparent;
+}
+
+i.tinvest {
+  content: url('../static/images/icons/tinvest_white.png');
+}
 /* 
  * Font imports 
  */
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../static/fonts/open-sans/OpenSans-Light.woff') format('woff'),
+       url('../static/fonts/open-sans/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../static/fonts/open-sans/OpenSans-Regular.woff') format('woff'),
+       url('../static/fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../static/fonts/open-sans/OpenSans-Bold.woff') format('woff'),
+       url('../static/fonts/open-sans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*
 @font-face {
   font-family: 'Roboto';
   src: url('../static/fonts/roboto/Roboto-Thin.woff') format('woff'),
@@ -123,7 +193,7 @@ $link-color: color("light-blue", "darken-1") !default;
   font-weight: 700;
   font-style: normal;
 }
-
+*/
 
 /* Material Design Icon Font
  * 
