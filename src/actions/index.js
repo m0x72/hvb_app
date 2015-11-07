@@ -1,8 +1,8 @@
 import fetch from 'isomorphic-fetch';
 
 //const BASE = 'http://crowdtv.test.hyve.net';
-const BASE = 'http://192.168.0.180:3000';
-//const BASE = 'http://tinvest.my-ideanet.net';
+//const BASE = 'http://192.168.0.180:3000';
+const BASE = 'http://tinvest.my-ideanet.net';
 export const API_BASE = BASE + '/api';
 export const SERVER_BASE = BASE;
 

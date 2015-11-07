@@ -1,5 +1,5 @@
 .outside {
-
+  position: relative;
   .background {
     background-image: url('../../static/images/login_background.jpg');
     background-size: cover;
@@ -30,7 +30,8 @@
 
 .login {
   .logo {
-    margin: 120px 0 100px 0;
+    padding: 120px 0 100px 0;
+    margin: 0;
     &:before {
       content: "";
       background-image: url('../../static/images/tinvest_logo.png');
