@@ -41,11 +41,11 @@ class LoginPage extends Component {
     };
     if (this.props.auth.isFetching) loadingStyle.display = 'block';
     return (
-      <div className="login valign-wrapper">
-        <div className="valign">
-          <div className="">
-            <h3 className="center-align">tinvest</h3>
-          </div>
+      <div className="login">
+        <div className="background"></div>
+        <div className="">
+          <div className="center-align logo"></div>
+          <h4 className="started center-align">Get started!</h4>
           <Form className="" 
                 onValidSubmit={this.login}>
             <div className="inputItem">
