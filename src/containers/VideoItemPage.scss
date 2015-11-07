@@ -1,0 +1,21 @@
+@import "~materialize-css/sass/components/prefixer";
+@import "~materialize-css/sass/components/mixins";
+@import "~materialize-css/sass/components/color";
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/form";
+
+.videoItem {
+  .videoWrapper {
+    video {
+      margin: auto;
+    }
+  }
+  .title {
+    display: inline-block;
+    padding-right: 25px;
+  }
+  .descriptionTitle {
+    margin-top: 0px
+  }
+}
+

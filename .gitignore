@@ -1,0 +1,22 @@
+# Vim
+.*.swp
+.*.swo
+.*.swn
+
+# project
+node_modules
+.tmp
+
+#Various (OS)
+$RECYCLE.BIN/
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+.Trashes
+.Spotlight-V100
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+# (Text)
+*.sublime-workspace

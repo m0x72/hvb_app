@@ -1,0 +1,11 @@
+@import "./common.scss";
+
+.formError {
+  margin: 20px 0px;
+  &.error {
+    color: red;
+  }
+  &.success { 
+    color: green;
+  }
+}

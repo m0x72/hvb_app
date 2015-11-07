@@ -1,0 +1,58 @@
+@import "~materialize-css/sass/components/prefixer";
+
+/* 
+ * Nav bar override!
+ */
+
+@media only screen and (min-width: 993px) {
+
+  nav a.button-collapse {
+    display: block;
+  }
+
+  nav .brand-logo {
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+}
+
+.slide-container {
+
+  > * {
+    transition: all 0.2s ease-in;
+  }
+  
+  &.open {
+    .slide-background {
+      display: block;
+      opacity: 1;
+    }
+    .side-nav {
+      @include transform(translateX(0));
+    }
+  }
+
+  .slide-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0, 0.6);
+    z-index: 998;
+
+    display: none;
+  }
+
+  .side-nav {
+    left: 0;
+    @include transform(translateX(-240px));
+  }
+
+}
+
+nav {
+  @include transform(translateY(0));
+}
+
+

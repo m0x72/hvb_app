@@ -1,0 +1,37 @@
+@import "~materialize-css/sass/components/prefixer";
+@import "~materialize-css/sass/components/mixins";
+@import "~materialize-css/sass/components/color";
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/form";
+
+.videoList {
+  .card-image {
+    .cardImageWrapper {
+      &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        @include linear-gradient-top2(
+        rgba(255,255,255, 0), //default
+        rgba(0, 0, 0, 0), 
+        0%,
+        rgba(0, 0, 0, 0.3),
+        80%,
+        rgba(0, 0, 0, 0.6),
+        100%);
+      }
+    }
+    .cardDuration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 25px 20px;
+      color: white;
+     
+    }
+  }
+}
+

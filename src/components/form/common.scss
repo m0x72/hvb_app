@@ -1,0 +1,15 @@
+@import "~materialize-css/sass/components/prefixer";
+@import "~materialize-css/sass/components/mixins";
+@import "~materialize-css/sass/components/color";
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/form";
+
+.error-field {
+  color: $input-error-color;
+  font-size: $label-font-size;
+  margin-bottom: 10px;
+  display: none;
+  &.invalid {
+    display: block;
+  }
+}

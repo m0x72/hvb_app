@@ -1,0 +1,8 @@
+@import "./common.scss";
+
+textarea.materialize-textarea {
+  &.invalid {
+    margin-bottom: 30px;
+  }
+}
+
