@@ -338,3 +338,54 @@ export function registerUser(userFormData) {
   };
 }
 
+export const INVESTS_USER_REQUEST = 'INVESTS_USER_REQUEST';
+export const INVESTS_USER_SUCCESS = 'INVESTS_USER_SUCCESS';
+export const INVESTS_USER_FAILURE = 'INVESTS_USER_FAILURE';
+
+export function investmentsUser() {
+  return {
+    // Types of actions to emit before and after
+    types: [INVESTS_USER_REQUEST, INVESTS_USER_SUCCESS, INVESTS_USER_FAILURE],
+    // Check the cache (optional):
+    shouldCallAPI: (state) => true,//!state.users[userId],
+    // Perform the fetching:
+    callAPI: (token) => fetch(API_BASE+'/investments/self', {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    }),
+    // Arguments to inject in begin/end actions
+    payload: { }
+  };
+}
+
+export const INVESTS_REQUEST = 'INVESTS_REQUEST';
+export const INVESTS_SUCCESS = 'INVESTS_SUCCESS';
+export const INVESTS_FAILURE = 'INVESTS_FAILURE';
+
+export function investments(lat, lng) {
+
+  let oParams = {
+    lat,
+    long: lng
+  };
+  const sParams = '?'+encodeParams(oParams);
+
+  return {
+    // Types of actions to emit before and after
+    types: [INVESTS_REQUEST, INVESTS_SUCCESS, INVESTS_FAILURE],
+    // Check the cache (optional):
+    shouldCallAPI: (state) => true,//!state.users[userId],
+    // Perform the fetching:
+    callAPI: (token) => fetch(API_BASE+'/investments'+sParams, {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    }),
+    // Arguments to inject in begin/end actions
+    payload: { }
+  };
+}
+

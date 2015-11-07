@@ -32,29 +32,32 @@ class SettingsPage extends Component {
           <div className="subHeader">GENERAL</div>
           <div className="inputItem">
             <Input name="name" type="text" label="Name"
-              placeholder="Your name"/>
+              required/>
           </div>
           <div className="inputItem">
-            <Input name="email" type="text" label="Email"/>
+            <Input name="email" type="text" label="Email"
+              required/>
           </div>
           <div className="inputItem">
-            <Input name="password" type="password" label="Password"/>
+            <Input name="password" type="password" label="Password"
+              required/>
           </div>
           <div className="inputItem">
-            <Input name="birthday" type="text" label="Birthday"/>
+            <Input name="birthday" type="text" label="Birthday"
+              required/>
           </div>
           <div className="inputItem">
-            <Input name="max_tinvest" type="text" label="Max.Tinvestment"/>
+            <Input name="max_tinvestment" type="text" label="Max.Tinvestment"
+              required/>
           </div>
           <div className="subHeader">FILTER</div>
           <div className="inputItem">
-            <Input name="max_tinvest" type="text" label="Filter Tinvesments by Location"/>
+            <Input name="filter_by_location" type="text" label="Filter Tinvesments by Location"
+              required/>
           </div>
           <div className="inputItem">
-            <Input name="max_tinvest" type="text" label="Filter Tinvestments by Community"/>
-          </div>
-          <div className="inputItem">
-            <Input name="max_tinvest" type="text" label="Filter by Interest"/>
+            <Input name="filter_by_category[]" type="text" label="Filter by Interest"
+              required/>
           </div>
           <div className="buttonBar">
             <button className="btn">

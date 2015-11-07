@@ -16,6 +16,8 @@ import InvestPage from './InvestPage';
 import InvestItemPage from './InvestItemPage';
 import InvestItemPredictionPage from './InvestItemPredictionPage';
 
+import { receiveLoginSuccess } from '../actions';
+
 export default class Root extends Component {
 
   constructor(props) {

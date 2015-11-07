@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { SERVER_BASE } from '../actions';
+import { SERVER_BASE, investmentsUser } from '../actions';
 
 import './DashboardPage.scss';
 import icarosTest from '../../static/images/icaros.png';
@@ -18,6 +18,7 @@ class DashboardPage extends Component {
 
   componentWillMount() {
     // fetch
+    this.props.investmentsUser();
   }
 
   render() {
@@ -59,10 +60,12 @@ DashboardPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
+    investmentsUser: state.investments.userInvestments
   };
 }
 
 var mapDispatchToProps = {
+  investmentsUser
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardPage);

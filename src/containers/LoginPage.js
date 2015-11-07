@@ -51,12 +51,18 @@ class LoginPage extends Component {
             <div className="inputItem">
               <Input className=""
                 name="email" type="email" 
-                label="Email" />
+                label="Email" 
+                required
+                validations="isEmail"
+                valdiationErrors={{
+                  isEmail: 'Must be valid email'
+                }}/>
             </div>
             <div className="inputItem">
               <Input className=""
                 name="password" type="password" 
-                label="Password" />
+                label="Password" 
+                required />
             </div>
               <div className="">
                 <button type="submit"

@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 var authState = {
   //isAuthenticated: false,
-  bearerToken: null,
+  bearerToken: localStorage.getItem('bearerToken'), //DEV
   email: null,
   password: null,
   isFetching: false,
@@ -21,6 +21,7 @@ function auth(state = authState, action) {
         isFetching: true
       };
     case ActionTypes.LOGIN_SUCCESS:
+      localStorage.setItem('bearerToken', action.token);
       return {
         ...state,
         isFetching: false,
@@ -250,11 +251,66 @@ function video(state = videoState, action) {
   }
 }
 
+var investmentsState = {
+  isFetching: false,
+  hasFetched: false,
+  investments: [],
+  userInvestments: {}
+};
+function investments(state = investmentsState, action) {
+  switch (action.type) {
+    case ActionTypes.INVESTS_USER_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case ActionTypes.INVESTS_USER_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: true,
+        error: null,
+        userInvestments: action.response
+      };
+    case ActionTypes.INVESTS_USER_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: false,
+        error: true
+      };
+    case ActionTypes.INVESTS_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case ActionTypes.INVESTS_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: true,
+        error: null,
+        investments: action.response
+      };
+    case ActionTypes.INVESTS_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: false,
+        error: true
+      };
+     default:
+      return state;
+  }
+}
+
+
+
 
 const rootReducer = combineReducers({
   auth,
   user,
-  video,
+  investments,
   router
 });
 

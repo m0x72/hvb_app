@@ -13,7 +13,8 @@ class Input extends Component {
       'valid': !this.props.isPristine() && this.props.isValid(),
       'invalid': !this.props.isPristine() && (this.props.showRequired() || this.props.showError())
     });
-    const errorMsg = this.props.showRequired() ? 'Erforderlich' : this.props.getErrorMessage();
+    const errorMsg = !this.props.isPristine() && 
+      this.props.showRequired() ? 'Required' : this.props.getErrorMessage();
     return (
       <div className={this.props.className + ' input-field'}>
         <label htmlFor={this.props.name} className="input"
@@ -27,6 +28,7 @@ class Input extends Component {
             placeholder={this.props.placeholder}
             value={this.props.getValue()}
             onChange={ e => this.props.setValue(e.target.value) } />
+        { errorMsg && <div className="inputErrorMsg">{errorMsg}</div> }
       </div>
     );
   }

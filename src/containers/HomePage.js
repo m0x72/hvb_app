@@ -180,7 +180,7 @@ class HomePage extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/home/invest"
+                <Link to="/home/invest/3"
                      onClick={this.handleSideNavClose}>
                   Invests
                 </Link>
