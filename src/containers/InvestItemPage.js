@@ -43,7 +43,13 @@ class DashboardPage extends Component {
             <div className="investHeadline center-align">How to invest?</div>
             <div className="investAmount center-align">20,000 €</div>
           </div>
-            
+        </div>
+        <div className="buttonBar">
+          <a className="btn contact">Contact Consultant</a>
+          <a className="btn invest">
+            <i className="tinvest"></i>
+            Tinvest now
+          </a>
         </div>
       </div>
     );

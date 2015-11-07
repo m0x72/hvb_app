@@ -126,6 +126,16 @@ $btn-primary: #eb4d5f;
 i.tinvest {
   content: url('../static/images/icons/tinvest_white.png');
 }
+
+.btn {
+  i.tinvest {
+    height: 30px;
+    position: relative;
+    top: 6px;
+    margin-left: -24px;
+  }
+}
+
 /* 
  * Font imports 
  */
