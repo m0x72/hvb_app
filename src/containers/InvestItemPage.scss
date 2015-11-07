@@ -1,0 +1,75 @@
+@import "~materialize-css/sass/components/prefixer";
+@import "~materialize-css/sass/components/mixins";
+@import "~materialize-css/sass/components/color";
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/global";
+
+.investItemPage {
+  .cardHeadline { 
+    margin: 20px 0;
+    font-size: 2rem;
+  }
+
+  .actionBar { 
+    margin: 60px 0;
+    .linkBar {
+
+      $predictionLinkSize: 120px;
+
+      @extend .z-depth-1;
+      border-radius: 40px;
+      height: 40px;
+      position: relative;
+      .actionLink {
+        height: 40px;
+        line-height: 40px;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        text-align: center; 
+        vertical-align: middle;
+        $edgeOffset: calc(25%-#{$predictionLinkSize});
+        
+        &.actionDecline {
+          left: $edgeOffset;
+        }
+        &.actionApprove {
+          right: $edgeOffset;
+        }
+      }
+      .predictionLink {
+        position: absolute;
+        display: block;
+        width: $predictionLinkSize;
+        height: $predictionLinkSize;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50% 50%;
+        &:before {
+          content: "";
+          background-image: url('../../static/images/button_crystalball.png');
+          background-size: 100% 100%;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+      
+    }
+
+  }
+  .investAction {
+  
+    .investHeadline {
+      font-size: 1.2rem;
+    }
+    .investAmount {
+      font-size: 4rem;
+      font-weight: 300;
+    }
+  }
+}

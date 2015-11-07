@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { SERVER_BASE } from '../actions';
 
-import './DashboardPage.scss';
+import './InvestItemPage.scss';
 
 import icarosTest from '../../static/images/icaros.png';
 
@@ -23,14 +23,27 @@ class DashboardPage extends Component {
 
   render() {
     return (
-      <div className="dashboardPage">
+      <div className="investItemPage">
+        <div className="cardHeadline center-align">ICAROS</div>
         <div className="row">
           <div className="col s10 offset-s1">
             <InvestCard
                 image={icarosTest}
-                title='ICAROS'
+                title='20.000 € for 12%'
             />
+            <div className="actionBar">
+              <div className="linkBar">
+                <a className="actionLink actionDecline">No</a>
+                <a className="actionLink actionApprove">Yes</a>
+                <a className="predictionLink"></a>
+              </div>
+            </div>
           </div>
+          <div className="investAction col s12">
+            <div className="investHeadline center-align">How to invest?</div>
+            <div className="investAmount center-align">20,000 €</div>
+          </div>
+            
         </div>
       </div>
     );

@@ -20,7 +20,6 @@ class InvestPage extends Component {
   render() {
     return (
       <div className="investPage">
-        InvestPage
         { this.props.children }
       </div>
     );
