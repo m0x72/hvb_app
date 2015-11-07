@@ -41,7 +41,7 @@ class LoginPage extends Component {
     };
     if (this.props.auth.isFetching) loadingStyle.display = 'block';
     return (
-      <div className="login">
+      <div className="login outside">
         <div className="background"></div>
         <div className="">
           <div className="center-align logo"></div>

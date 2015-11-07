@@ -8,6 +8,10 @@ import Input from '../components/form/Input';
 import FormError from '../components/form/FormError';
 import { registerUser } from '../actions';
 
+import './LoginPage.scss';
+import './RegisterPage.scss';
+
+
 class RegisterPage extends Component {
   constructor(props) {
     super(props);
@@ -41,56 +45,65 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div className="register valign-wrapper">
-        <div className="row valign">
-          <div className="col s12">
-            <h3 className="center-align">Sign up</h3>
-          </div>
-          <Form className="col s8 offset-s2" 
+      <div className="registerPage outside">
+        <div className="background"></div>
+        <div className="">
+          <h3 className="headline center-align">Sign up</h3>
+          <Form className="" 
               onValidSubmit={this.handleSubmit} 
               model={this.mapForm}
               ref="form">
-            <Input name="firstname" type="text"
-                className="col s12"
-                label="Firstname"
-                validations="minLength:2"
-                validationErrors={{
-                  minLength: 'Mindestens 2 Zeichen'
-                }}
-                required />
-            <Input name="lastname" type="text"
-                className="col s12"
-                label="Lastname"
-                validations="minLength:2"
-                validationErrors={{
-                  minLength: 'Mindestens 2 Zeichen'
-                }}
-                required />
-            <Input name="email" type="email"
-                className="col s12"
-                label="Email"
-                validations="isEmail"
-                validationErrors={{
-                  isEmail: 'Valide Emailaddresse benötigt'
-                }}
-                required />
-            <Input name="password" type="password"
-                className="col s12"
-                label="Password"
-                validations="minLength:6"
-                validationErrors={{
-                  minLength: 'Mindestens 6 Zeichen'
-                }}
-                required />
-            <Input name="password_confirmation" type="password"
-                className="col s12"
-                label="Password"
-                validations="minLength:6,equalsField:password"
-                validationErrors={{
-                  minLength: 'Mindestens 6 Zeichen',
-                  equalsField: 'Wiederholung stimmt nicht überein'
-                }}
-                required />
+            <div className="inputItem">
+              <Input name="firstname" type="text"
+                  className="col s12"
+                  label="Firstname"
+                  validations="minLength:2"
+                  validationErrors={{
+                    minLength: 'Mindestens 2 Zeichen'
+                  }}
+                  required />
+            </div>
+            <div className="inputItem">
+              <Input name="lastname" type="text"
+                  className="col s12"
+                  label="Lastname"
+                  validations="minLength:2"
+                  validationErrors={{
+                    minLength: 'Mindestens 2 Zeichen'
+                  }}
+                  required />
+            </div>
+            <div className="inputItem">
+              <Input name="email" type="email"
+                  className="col s12"
+                  label="Email"
+                  validations="isEmail"
+                  validationErrors={{
+                    isEmail: 'Valide Emailaddresse benötigt'
+                  }}
+                  required />
+            </div>
+            <div className="inputItem">
+              <Input name="password" type="password"
+                  className="col s12"
+                  label="Password"
+                  validations="minLength:6"
+                  validationErrors={{
+                    minLength: 'Mindestens 6 Zeichen'
+                  }}
+                  required />
+            </div>
+            <div className="inputItem">
+              <Input name="password_confirmation" type="password"
+                  className="col s12"
+                  label="Password"
+                  validations="minLength:6,equalsField:password"
+                  validationErrors={{
+                    minLength: 'Mindestens 6 Zeichen',
+                    equalsField: 'Wiederholung stimmt nicht überein'
+                  }}
+                  required />
+            </div>
             <div className="col s12 right-align">
               <button type="submit" className="btn">
                 Sign up
@@ -100,7 +113,9 @@ class RegisterPage extends Component {
               <FormError error={this.state.registerError} 
                   success={this.state.registerSuccess} />
             </div>
-            <IndexLink to="/">Back to login</IndexLink>
+            <div className="navBack">
+              <IndexLink to="/">Back to login</IndexLink>
+            </div>
           </Form>
         </div>
       </div>
