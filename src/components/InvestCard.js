@@ -13,7 +13,7 @@ export default class InvestCard extends Component {
           <div className="title valign">{this.props.title}</div>
         </div>
         { this.props.link ? 
-          (<Link to="/home/invest/3" className="btn">
+          (<Link to={this.props.link.to} className="btn">
            {this.props.link.text}
            </Link>) : ''
         }

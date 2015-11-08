@@ -365,7 +365,7 @@ export const INVESTS_REQUEST = 'INVESTS_REQUEST';
 export const INVESTS_SUCCESS = 'INVESTS_SUCCESS';
 export const INVESTS_FAILURE = 'INVESTS_FAILURE';
 
-export function fetchInvestments(lat, lng) {
+export function fetchInvestments(lat = '', lng = '') {
 
   let oParams = {
     lat,

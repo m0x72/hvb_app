@@ -17,13 +17,13 @@ class InvestItemPage extends Component {
     super(props);
     this.handleAccept = this.handleAccept.bind(this);
     this.handleDecline = this.handleDecline.bind(this);
-   
-    console.log('accounts', props.accounts); 
+  
+    // fetched by HomePage.js or in here 
     const maxs = props.accounts.amount_by_type;
 
     this.state = {
       showBuyOptions: false,
-      accounts_max: [ maxs[1], maxs[2], maxs[3] ],
+      //accounts_max: [ maxs[1], maxs[2], maxs[3] ],
       accounts: [33, 50, 77]
     };
   }
@@ -54,7 +54,7 @@ class InvestItemPage extends Component {
     const investId = this.props.routeParams.id;
     const investment = this.props.investments.find( i => i.id == investId );
 
-    if (!investment) return <h4>Investment not found or loading</h4>;
+    if (!investment) return <h4 className="center-align">Investment loading</h4>;
 
     const a = this.state.accounts;
     const aOther = 100 - this.state.accounts[2];
@@ -68,7 +68,7 @@ class InvestItemPage extends Component {
                 image={SERVER_BASE + investment.picture}
                 title={investment.investment_amount + ' € for ' + (investment.turnover*100) + '%'}
             />
-            <div className="actionBar">
+            <div className="actionBar" ref="actionBar">
               <div className="linkBar">
                 <a className="actionLink actionDecline"
                     onClick={this.handleDecline}>No</a>
