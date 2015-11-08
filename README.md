@@ -1,4 +1,4 @@
-#CrowdTV
+#TINVEST
 
 ##Gettin' started
 
@@ -14,6 +14,16 @@ Fetch npm dependencies
 npm install
 ```
 
+Run webpack-dev-server
+```js
+gulp
+```
+
+## Build
+```js
+npm install --global webpack
+node webpack.dist.app_extern.js
+```
 
 
 
