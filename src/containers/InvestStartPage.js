@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { SERVER_BASE, fetchInvestments } from '../actions';
+import { SERVER_BASE } from '../actions';
 
 import { pushState } from 'redux-router';
-import './InvestPage.scss';
 
 class InvestPage extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class InvestPage extends Component {
 
   componentWillMount() {
     // fetch
-    this.props.fetchInvestments('', '');
+    this.props.pushState(null, '/home/invest/3');
   }
 
   render() {
@@ -34,12 +33,13 @@ InvestPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
+    investments: state.investments.investments,
+    investmentsViewed: state.investments.investmentsViewed
   };
 }
 
 var mapDispatchToProps = {
-  pushState,
-  fetchInvestments
+  pushState
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InvestPage);

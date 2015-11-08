@@ -15,6 +15,8 @@ import DashboardPage from './DashboardPage';
 import InvestPage from './InvestPage';
 import InvestItemPage from './InvestItemPage';
 import InvestItemPredictionPage from './InvestItemPredictionPage';
+import InvestStartPage from './InvestStartPage';
+import InvestEndPage from './InvestEndPage';
 
 import { receiveLoginSuccess } from '../actions';
 
@@ -48,8 +50,10 @@ export default class Root extends Component {
                 <Route path="settings" component={SettingsPage} />
                 <Route path="dashboard" component={DashboardPage} />
                 <Route path="invest" component={InvestPage}>
-                  <Route path=":id" component={InvestItemPage} />
+                  <Route path="end" component={InvestEndPage} />
                   <Route path=":id/prediction" component={InvestItemPredictionPage} />
+                  <Route path=":id" component={InvestItemPage} />
+                  <IndexRoute component={InvestStartPage} />
                 </Route>
                 
                 <IndexRedirect to="/home/dashboard" />

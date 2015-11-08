@@ -51,7 +51,6 @@ export default function callAPI({ dispatch, getState }) {
       }));
 
       const token = getState().auth.bearerToken;
-      console.log('FUCKTOKEN', token);
       
       return callAPI(token)
       .then(checkStatus)

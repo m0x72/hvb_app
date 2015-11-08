@@ -2,7 +2,8 @@ import fetch from 'isomorphic-fetch';
 
 //const BASE = 'http://crowdtv.test.hyve.net';
 //const BASE = 'http://192.168.0.180:3000';
-const BASE = 'http://tinvest.my-ideanet.net';
+//const BASE = 'http://tinvest.my-ideanet.net';
+const BASE = 'http://tinvest.dev.local';
 export const API_BASE = BASE + '/api';
 export const SERVER_BASE = BASE;
 
@@ -364,7 +365,7 @@ export const INVESTS_REQUEST = 'INVESTS_REQUEST';
 export const INVESTS_SUCCESS = 'INVESTS_SUCCESS';
 export const INVESTS_FAILURE = 'INVESTS_FAILURE';
 
-export function investments(lat, lng) {
+export function fetchInvestments(lat, lng) {
 
   let oParams = {
     lat,
@@ -389,3 +390,10 @@ export function investments(lat, lng) {
   };
 }
 
+export const INVEST_VIEWED = 'INVEST_VIEWED';
+export function investViewed(investId) {
+  return {
+    type: INVEST_VIEWED,
+    investId
+  };
+}

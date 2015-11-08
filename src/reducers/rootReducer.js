@@ -251,10 +251,19 @@ function video(state = videoState, action) {
   }
 }
 
+function addItemUnique(arr, id) {
+  if (arr.findIndex( i => i.id == id ) > -1)
+    return arr;
+  let ret = arr.slice(0);
+  ret.push(id);
+  return ret;
+}
+
 var investmentsState = {
   isFetching: false,
   hasFetched: false,
   investments: [],
+  investmentsViewed: [],
   userInvestments: {}
 };
 function investments(state = investmentsState, action) {
@@ -290,7 +299,7 @@ function investments(state = investmentsState, action) {
         isFetching: false,
         hasFetched: true,
         error: null,
-        investments: action.response
+        investments: action.response.investments
       };
     case ActionTypes.INVESTS_FAILURE:
       return {
@@ -298,6 +307,11 @@ function investments(state = investmentsState, action) {
         isFetching: false,
         hasFetched: false,
         error: true
+      };
+    case ActionTypes.INVEST_VIEWED: 
+      return {
+        ...state,
+        investmentsViewed: addItemUnique(state.investmentsViewed, action.investId)
       };
      default:
       return state;

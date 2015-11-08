@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { SERVER_BASE, fetchInvestments } from '../actions';
+import { SERVER_BASE } from '../actions';
 
 import { pushState } from 'redux-router';
-import './InvestPage.scss';
 
-class InvestPage extends Component {
+class InvestEndPage extends Component {
   constructor(props) {
     super(props);
    
@@ -16,19 +15,18 @@ class InvestPage extends Component {
 
   componentWillMount() {
     // fetch
-    this.props.fetchInvestments('', '');
   }
 
   render() {
     return (
-      <div className="investPage">
-        { this.props.children }
+      <div className="investEndPage">
+        <h4>End of Investments reached</h4>
       </div>
     );
   }
 }
 
-InvestPage.propTypes = {
+InvestEndPage.propTypes = {
   // react-redux
 };
 
@@ -38,8 +36,7 @@ function mapStateToProps(state) {
 }
 
 var mapDispatchToProps = {
-  pushState,
-  fetchInvestments
+  pushState
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(InvestPage);
+export default connect(mapStateToProps, mapDispatchToProps)(InvestEndPage);
