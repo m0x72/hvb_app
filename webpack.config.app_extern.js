@@ -50,15 +50,15 @@ module.exports = {
       // fonts
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=8192&minetype=application/font-woff"
+        loader: "url?limit=819200&minetype=application/font-woff"
       }, 
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=8192&minetype=application/font-woff2"
+        loader: "url?limit=819200&minetype=application/font-woff2"
       }, 
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=8192&minetype=application/octet-stream"
+        loader: "url?limit=819200&minetype=application/octet-stream"
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -66,7 +66,7 @@ module.exports = {
       }, 
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=8192&minetype=image/svg+xml"
+        loader: "url?limit=819200&minetype=image/svg+xml"
       }
     ]
   },
