@@ -181,7 +181,7 @@ class HomePage extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/home/invest/3"
+                <Link to="/home/invest/8"
                      onClick={this.handleSideNavClose}>
                   Invests
                 </Link>
