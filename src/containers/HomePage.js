@@ -4,7 +4,7 @@ import { Link, IndexLink } from 'react-router';
 import classNames from 'classnames';
 
 import { pushState } from 'redux-router';
-import { fetchLogout, fetchUser } from '../actions';
+import { fetchLogout, fetchUser, fetchAccountsUser } from '../actions';
 
 import './HomePage.scss';
 
@@ -31,6 +31,7 @@ class HomePage extends Component {
   componentWillMount() {
     if (!this.props.user.hasFetched)
       this.props.fetchUser(this.props.auth.bearerToken);
+    this.props.fetchAccountsUser();
   }
 
   handleFocusNav() {
@@ -212,6 +213,7 @@ function mapStateToProps(state) {
 var mapDispatchToProps = {
   fetchLogout,
   fetchUser,
+  fetchAccountsUser,
   pushState
 };
 

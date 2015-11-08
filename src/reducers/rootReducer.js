@@ -318,13 +318,44 @@ function investments(state = investmentsState, action) {
   }
 }
 
-
+var accountsState = {
+  isFetching: false,
+  hasFetched: false,
+  userAccounts: {}
+};
+function accounts(state = accountsState, action) {
+  switch (action.type) {
+    case ActionTypes.ACCOUNTS_USER_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case ActionTypes.ACCOUNTS_USER_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: true,
+        error: null,
+        userAccounts: action.response
+      };
+    case ActionTypes.ACCOUNTS_USER_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetched: false,
+        error: true
+      };
+     default:
+      return state;
+  }
+}
 
 
 const rootReducer = combineReducers({
   auth,
   user,
   investments,
+  accounts,
   router
 });
 

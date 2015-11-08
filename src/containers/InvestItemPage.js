@@ -17,13 +17,14 @@ class InvestItemPage extends Component {
     super(props);
     this.handleAccept = this.handleAccept.bind(this);
     this.handleDecline = this.handleDecline.bind(this);
-    
+   
+    console.log('accounts', props.accounts); 
     const maxs = props.accounts.amount_by_type;
 
     this.state = {
       showBuyOptions: false,
-      accounts_max: [ maxs[0], maxs[1], maxs[2], 10000],
-      accounts: [33, 50, 77, 100]
+      accounts_max: [ maxs[1], maxs[2], maxs[3] ],
+      accounts: [33, 50, 77]
     };
   }
 
@@ -55,6 +56,9 @@ class InvestItemPage extends Component {
 
     if (!investment) return <h4>Investment not found or loading</h4>;
 
+    const a = this.state.accounts;
+    const aOther = 100 - this.state.accounts[2];
+
     return (
       <div className="investItemPage">
         <div className="cardHeadline center-align">{investment.title}</div>
@@ -81,22 +85,40 @@ class InvestItemPage extends Component {
           <div className="investAction col s12">
             <div className="investHeadline center-align">How to invest?</div>
             <div className="investAmount center-align">{investment.investment_amount} €</div>
-            <ReactSlider withBars value={this.state.accounts} ref="slider"
-                onChange={this.setState({accounts: this.refs.slider.getValue()})} >
-              <div className="sliderHandle"></div>
+            <ReactSlider withBars className="slider multislider"
+                value={this.state.accounts} ref="slider"
+                onChange={() => this.setState({accounts: this.refs.slider.getValue()})} >
               <div className="sliderHandle"></div>
               <div className="sliderHandle"></div>
               <div className="sliderHandle"></div>
             </ReactSlider>
           </div>
-          { this.state.accounts.map( a => (
-              <div className="accountItem">
-                <div className="bar col s1">O</div>
-                <div className="col s7">Sell stocks</div>
-                <div className="col s3 right-align">{a*investment.investment_amount/100} €</div>
-                <div className="col s1">{a}%</div>
-              </div>
-          ))}
+          <div className="tableAccounts col s12">
+            <div className="accountItem acc-1" >
+              <div className="icon col s1">O</div>
+              <div className="desc col s6">Checking Accounts</div>
+              <div className="amount col s3 right-align">{a[0]*investment.investment_amount/100} €</div>
+              <div className="perc col s2 right-align">{a[0]}%</div>
+            </div>
+            <div className="accountItem acc-2" >
+              <div className="icon col s1">O</div>
+              <div className="desc col s6">Saving Accounts</div>
+              <div className="amount col s3 right-align">{a[1]*investment.investment_amount/100} €</div>
+              <div className="perc col s2 right-align">{a[1]}%</div>
+            </div>
+            <div className="accountItem acc-3" >
+              <div className="icon col s1">O</div>
+              <div className="desc col s6">Investment Accounts</div>
+              <div className="amount col s3 right-align">{a[2]*investment.investment_amount/100} €</div>
+              <div className="perc col s2 right-align">{a[2]}%</div>
+            </div>
+            <div className="accountItem acc-other" >
+              <div className="icon col s1">O</div>
+              <div className="desc col s6">Loan</div>
+              <div className="amount col s3 right-align">{aOther*investment.investment_amount/100} €</div>
+              <div className="perc col s2 right-align">{aOther}%</div>
+            </div>
+          </div>
         </div>
         <div className="buttonBar">
           <a className="btn btn-secondary contact">Contact Consultant</a>
@@ -119,7 +141,7 @@ function mapStateToProps(state) {
   return {
     investmentsViewed: state.investments.investmentsViewed,
     investments: state.investments.investments,
-    accounts: state.user.accounts
+    accounts: state.accounts.userAccounts
   };
 }
 

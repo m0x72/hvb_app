@@ -4,7 +4,77 @@
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/global";
 
+.slider.multislider {
+  height: 16px;
+
+  .bar {
+    height: 4px;
+    top: 8px;
+  }
+  .handle {
+    @extend .z-depth-1;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 50% 50%;
+    background-color: white;
+  }
+}
+
+
 .investItemPage {
+
+  $color-1: #00aed0;
+  $color-2: rgb(159, 36, 50);
+  $color-3: rgb(236, 233, 101);
+  $color-other: rgb(29, 29, 38); 
+
+  .multislider {
+    .bar-0 {
+      background-color: $color-1;
+      border-radius: 4px 4px;
+    }
+    .bar-1 {
+      background-color: $color-2;
+    }
+    .bar-2 {
+      background-color: $color-3;
+    }
+    .bar-3 {
+      background-color: $color-other;
+      border-radius: 4px 4px;
+    }
+  }
+  
+  .accountItem {
+
+
+    .col {
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(234, 234, 235);
+    }
+
+
+    .icon {
+      font-weight: 700;
+    }
+    &.acc-1 .icon {
+      color: $color-1;
+    }
+    &.acc-2 .icon {
+      color: $color-2;
+    }
+    &.acc-3 .icon {
+      color: $color-3;
+    }
+    &.acc-other .icon {
+      color: $color-other;
+    }
+    .desc {
+      text-transform: uppercase;
+    }
+  }
+
   .cardHeadline { 
     margin: 20px 0;
     font-size: 2rem;

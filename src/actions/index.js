@@ -397,3 +397,28 @@ export function investViewed(investId) {
     investId
   };
 }
+
+export const ACCOUNTS_USER_REQUEST = 'ACCOUNTS_USER_REQUEST';
+export const ACCOUNTS_USER_SUCCESS = 'ACCOUNTS_USER_SUCCESS';
+export const ACCOUNTS_USER_FAILURE = 'ACCOUNTS_USER_FAILURE';
+
+export function fetchAccountsUser() {
+
+  return {
+    // Types of actions to emit before and after
+    types: [ACCOUNTS_USER_REQUEST, ACCOUNTS_USER_SUCCESS, ACCOUNTS_USER_FAILURE],
+    // Check the cache (optional):
+    shouldCallAPI: (state) => true,//!state.users[userId],
+    // Perform the fetching:
+    callAPI: (token) => fetch(API_BASE+'/accounts/self', {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    }),
+    // Arguments to inject in begin/end actions
+    payload: { }
+  };
+}
+
+
