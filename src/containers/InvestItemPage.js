@@ -36,6 +36,7 @@ class InvestItemPage extends Component {
     this.setState({
       showBuyOptions: true    
     });
+    setTimeout( () => document.querySelector('.tableAccounts').scrollIntoView(), 0);
   }
 
   handleDecline() {
@@ -93,7 +94,7 @@ class InvestItemPage extends Component {
               <div className="sliderHandle"></div>
             </ReactSlider>
           </div>
-          <div className="tableAccounts col s12">
+          <div className="tableAccounts col s12" ref="accountsTable">
             <div className="accountItem acc-1" >
               <div className="icon col s1">O</div>
               <div className="desc col s6">Checking Accounts</div>
@@ -108,7 +109,7 @@ class InvestItemPage extends Component {
             </div>
             <div className="accountItem acc-3" >
               <div className="icon col s1">O</div>
-              <div className="desc col s6">Investment Accounts</div>
+              <div className="desc col s6">Investm. Accounts</div>
               <div className="amount col s3 right-align">{a[2]*investment.investment_amount/100} €</div>
               <div className="perc col s2 right-align">{a[2]}%</div>
             </div>
