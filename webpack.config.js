@@ -10,7 +10,7 @@ module.exports = {
   //cache: true,
   entry: [
    'webpack-dev-server/client?http://'+addr+':'+port,
-   'webpack/hot/dev-server',
+   'webpack/hot/only-dev-server',
    './src/main.js'
   ], 
   output: {
